@@ -1,49 +1,40 @@
 {
-  "hash": "672b78c5",
-  "configHash": "ebb56ce2",
-  "lockfileHash": "fd4c23ee",
-  "browserHash": "ee3837c6",
+  "hash": "717b2e30",
+  "configHash": "0450fb30",
+  "lockfileHash": "9c02ba0e",
+  "browserHash": "92bcc263",
   "optimized": {
+    "@angular/common/http": {
+      "src": "../../../../../node_modules/@angular/common/fesm2022/http.mjs",
+      "file": "@angular_common_http.js",
+      "fileHash": "a7b2f200",
+      "needsInterop": false
+    },
     "@angular/core": {
       "src": "../../../../../node_modules/@angular/core/fesm2022/core.mjs",
       "file": "@angular_core.js",
-      "fileHash": "21d8f591",
+      "fileHash": "2c60c639",
       "needsInterop": false
     },
     "@angular/platform-browser": {
       "src": "../../../../../node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs",
       "file": "@angular_platform-browser.js",
-      "fileHash": "924ad213",
+      "fileHash": "955721d9",
       "needsInterop": false
     },
     "@angular/router": {
       "src": "../../../../../node_modules/@angular/router/fesm2022/router.mjs",
       "file": "@angular_router.js",
-      "fileHash": "09a92ffd",
-      "needsInterop": false
-    },
-    "@angular/common/http": {
-      "src": "../../../../../node_modules/@angular/common/fesm2022/http.mjs",
-      "file": "@angular_common_http.js",
-      "fileHash": "ed326524",
-      "needsInterop": false
-    },
-    "@angular/common": {
-      "src": "../../../../../node_modules/@angular/common/fesm2022/common.mjs",
-      "file": "@angular_common.js",
-      "fileHash": "d04b8c91",
+      "fileHash": "f571fa5b",
       "needsInterop": false
     }
   },
   "chunks": {
-    "chunk-74HPGAAI": {
-      "file": "chunk-74HPGAAI.js"
+    "chunk-BIPQSP6V": {
+      "file": "chunk-BIPQSP6V.js"
     },
-    "chunk-HXKUM5HF": {
-      "file": "chunk-HXKUM5HF.js"
-    },
-    "chunk-XFCOUONH": {
-      "file": "chunk-XFCOUONH.js"
+    "chunk-WI6LRNLE": {
+      "file": "chunk-WI6LRNLE.js"
     },
     "chunk-5FUJWLSI": {
       "file": "chunk-5FUJWLSI.js"
