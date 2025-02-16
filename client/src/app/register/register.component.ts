@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -6,18 +6,18 @@ import { FormsModule } from '@angular/forms';
   standalone: true,
   imports: [FormsModule],
   templateUrl: './register.component.html',
-  styleUrl: './register.component.css'
+  styleUrl: './register.component.css',
 })
 export class RegisterComponent {
-  @Input() usersFromHomeComponent: any;
-  
-  model: any = {}
+  usersFromHomeComponent = input.required<any>();
 
-  register(){
+  model: any = {};
+
+  register() {
     console.log(this.model);
   }
 
-  cancel(){
-    console.log("cancelled registration");
+  cancel() {
+    console.log('cancelled registration');
   }
 }
