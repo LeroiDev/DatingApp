@@ -1,0 +1,159 @@
+.animated-404-container {
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(45deg, #0f2027, #203a43, #2c5364);
+    animation: bgAnimation 20s ease infinite;
+  }
+  
+  @keyframes bgAnimation {
+    0% {
+      background: linear-gradient(45deg, #0f2027, #203a43, #2c5364);
+    }
+    50% {
+      background: linear-gradient(45deg, #2c5364, #203a43, #0f2027);
+    }
+    100% {
+      background: linear-gradient(45deg, #0f2027, #203a43, #2c5364);
+    }
+  }
+  
+  .container {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    padding: 2rem 3rem;
+    border: 2px solid #fff;
+    border-radius: 15px;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px);
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
+    animation: fadeInScale 2s ease-out;
+  }
+  
+  @keyframes fadeInScale {
+    from {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  .container h1 {
+    font-size: 8rem;
+    margin-bottom: 20px;
+    color: #ff4e50;
+    text-shadow: 0 0 20px rgba(255, 69, 0, 0.8);
+  }
+  
+  .container p {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    color: #fff;
+  }
+  
+  .btn-return {
+    padding: 15px 30px;
+    font-size: 1.5rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background: linear-gradient(45deg, #f9d423, #ff4e50);
+    color: #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  }
+  
+  .btn-return:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  }
+  
+  .floating-object {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.6;
+    animation: float 8s ease-in-out infinite;
+  }
+  
+  @keyframes float {
+    0% {
+      transform: translate(0, 0) rotate(0deg);
+    }
+    50% {
+      transform: translate(50px, -80px) rotate(180deg);
+    }
+    100% {
+      transform: translate(0, 0) rotate(360deg);
+    }
+  }
+  
+  .object1 {
+    width: 80px;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.3);
+    top: 10%;
+    left: 80%;
+    animation-duration: 10s;
+  }
+  
+  .object2 {
+    width: 120px;
+    height: 120px;
+    background: rgba(255, 100, 100, 0.3);
+    top: 60%;
+    left: 5%;
+    animation-duration: 12s;
+  }
+  
+  .object3 {
+    width: 60px;
+    height: 60px;
+    background: rgba(100, 255, 100, 0.3);
+    top: 30%;
+    left: 40%;
+    animation-duration: 9s;
+  }
+  
+  .object4 {
+    width: 100px;
+    height: 100px;
+    background: rgba(100, 100, 255, 0.3);
+    top: 80%;
+    left: 70%;
+    animation-duration: 14s;
+  }
+  
+  .object5 {
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 100, 0.3);
+    top: 20%;
+    left: 20%;
+    animation-duration: 11s;
+  }
+  
+  .object6 {
+    width: 90px;
+    height: 90px;
+    background: rgba(255, 150, 50, 0.3);
+    top: 50%;
+    left: 85%;
+    animation-duration: 13s;
+  }
+  
+  .object7 {
+    width: 70px;
+    height: 70px;
+    background: rgba(150, 255, 255, 0.3);
+    top: 5%;
+    left: 30%;
+    animation-duration: 15s;
+  }
+  
