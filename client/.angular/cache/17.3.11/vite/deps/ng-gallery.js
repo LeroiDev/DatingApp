@@ -1,13 +1,13 @@
 import {
-  DomSanitizer
-} from "./chunk-AHDKDJTC.js";
-import "./chunk-MH63QHRW.js";
-import {
   animate,
   style,
   transition,
   trigger
 } from "./chunk-CXABJPPS.js";
+import {
+  DomSanitizer
+} from "./chunk-AHDKDJTC.js";
+import "./chunk-MH63QHRW.js";
 import {
   AsyncPipe,
   CommonModule,
