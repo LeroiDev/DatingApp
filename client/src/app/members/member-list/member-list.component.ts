@@ -7,7 +7,7 @@ import { ButtonsModule } from 'ngx-bootstrap/buttons';
 
 @Component({
     selector: 'app-member-list',
-    standalone: true,
+    standalone: true,       
     templateUrl: './member-list.component.html',
     styleUrl: './member-list.component.css',
     imports: [MemberCardComponent, PaginationModule, FormsModule, ButtonsModule]
