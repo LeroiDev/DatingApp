@@ -19,6 +19,12 @@ import {
   styleUrl: './date-picker.component.css',
 })
 export class DatePickerComponent implements ControlValueAccessor {
+loadLikes() {
+throw new Error('Method not implemented.');
+}
+getTitle() {
+throw new Error('Method not implemented.');
+}
   label = input<string>('');
   maxDate = input<Date>();
   bsConfig?: Partial<BsDatepickerConfig>; //partial properties 
