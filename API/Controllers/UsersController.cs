@@ -70,7 +70,7 @@ public class UsersController(IUserRepository userRepository, IMapper mapper, IPh
 
         if (user.Photos.Count == 0)
         {
-            photo.isMain = true;
+            photo.IsMain = true;
         }
 
         user.Photos.Add(photo);
@@ -92,11 +92,11 @@ public class UsersController(IUserRepository userRepository, IMapper mapper, IPh
 
         var photo = user.Photos.FirstOrDefault(x => x.Id == photoId);
 
-        if (photo == null || photo.isMain) return BadRequest("Cannot use this as main photo");
+        if (photo == null || photo.IsMain) return BadRequest("Cannot use this as main photo");
 
-        var currentMain = user.Photos.FirstOrDefault(x => x.isMain);
-        if (currentMain != null) currentMain.isMain = false;
-        photo.isMain = true;
+        var currentMain = user.Photos.FirstOrDefault(x => x.IsMain);
+        if (currentMain != null) currentMain.IsMain = false;
+        photo.IsMain = true;
 
         if (await userRepository.SaveAllAsync()) return NoContent();
 
@@ -112,7 +112,7 @@ public class UsersController(IUserRepository userRepository, IMapper mapper, IPh
 
         var photo = user.Photos.FirstOrDefault(x => x.Id == photoId);
 
-        if (photo == null || photo.isMain) return BadRequest("This photo cannot be deleted");
+        if (photo == null || photo.IsMain) return BadRequest("This photo cannot be deleted");
 
         if (photo.PublicId != null)
         {

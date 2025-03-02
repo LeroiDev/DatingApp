@@ -6,7 +6,7 @@ import { environment } from '../../environments/environment';
 import { LikesService } from './likes.service';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AccountService {
   private http = inject(HttpClient);
@@ -20,27 +20,27 @@ export class AccountService {
       return Array.isArray(role) ? role : [role];
     }
     return [];
-  })
+  });
 
   login(model: any) {
     return this.http.post<User>(this.baseUrl + 'account/login', model).pipe(
-      map(user => {
+      map((user) => {
         if (user) {
           this.setCurrentUser(user);
         }
       })
-    )
+    );
   }
 
   register(model: any) {
     return this.http.post<User>(this.baseUrl + 'account/register', model).pipe(
-      map(user => {
+      map((user) => {
         if (user) {
           this.setCurrentUser(user);
         }
         return user;
       })
-    )
+    );
   }
 
   setCurrentUser(user: User) {
