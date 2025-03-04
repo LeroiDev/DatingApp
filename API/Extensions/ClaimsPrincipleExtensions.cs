@@ -1,7 +1,6 @@
 using System.Security.Claims;
 
 namespace API.Extensions;
-
 public static class ClaimsPrincipleExtensions
 {
     public static string GetUsername(this ClaimsPrincipal user)
@@ -19,4 +18,5 @@ public static class ClaimsPrincipleExtensions
 
         return userId;
     }
+
 }

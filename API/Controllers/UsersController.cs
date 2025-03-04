@@ -24,7 +24,7 @@ public class UsersController(IUnitOfWork unitOfWork, IMapper mapper,
         return Ok(users);
     }
 
-    [HttpGet("{username}")]  
+    [HttpGet("{username}")]  // /api/users/2
     public async Task<ActionResult<MemberDto>> GetUser(string username)
     {
         var currentUsername = User.GetUsername();
