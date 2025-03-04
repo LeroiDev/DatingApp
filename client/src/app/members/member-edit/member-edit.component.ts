@@ -1,4 +1,10 @@
-import { Component, HostListener, OnInit, ViewChild, inject } from '@angular/core';
+import {
+  Component,
+  HostListener,
+  OnInit,
+  ViewChild,
+  inject,
+} from '@angular/core';
 import { Member } from '../../_models/member';
 import { AccountService } from '../../_services/account.service';
 import { MembersService } from '../../_services/members.service';
@@ -10,15 +16,21 @@ import { TimeagoModule } from 'ngx-timeago';
 import { DatePipe } from '@angular/common';
 
 @Component({
-    selector: 'app-member-edit',
-    standalone: true,
-    templateUrl: './member-edit.component.html',
-    styleUrl: './member-edit.component.css',
-    imports: [TabsModule, FormsModule, PhotoEditorComponent, TimeagoModule, DatePipe]
+  selector: 'app-member-edit',
+  standalone: true,
+  templateUrl: './member-edit.component.html',
+  styleUrl: './member-edit.component.css',
+  imports: [
+    TabsModule,
+    FormsModule,
+    PhotoEditorComponent,
+    DatePipe,
+    TimeagoModule,
+  ],
 })
 export class MemberEditComponent implements OnInit {
   @ViewChild('editForm') editForm?: NgForm;
-  @HostListener('window:beforeunload', ['$event']) notify($event:any) {
+  @HostListener('window:beforeunload', ['$event']) notify($event: any) {
     if (this.editForm?.dirty) {
       $event.returnValue = true;
     }
@@ -37,17 +49,17 @@ export class MemberEditComponent implements OnInit {
     const user = this.accountService.currentUser();
     if (!user) return;
     this.memberService.getMember(user.username).subscribe({
-      next: member => this.member = member
-    })
+      next: (member) => (this.member = member),
+    });
   }
 
   updateMember() {
     this.memberService.updateMember(this.editForm?.value).subscribe({
-      next: _ => {
+      next: (_) => {
         this.toastr.success('Profile updated successfully');
         this.editForm?.reset(this.member);
-      }
-    })
+      },
+    });
   }
 
   onMemberChange(event: Member) {

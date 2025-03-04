@@ -31,6 +31,37 @@ export class PhotoEditorComponent implements OnInit {
     this.hasBaseDropZoneOver = e;
   }
 
+  deletePhoto(photo: Photo) {
+    this.memberService.deletePhoto(photo).subscribe({
+      next: (_) => {
+        const updatedMember = { ...this.member() };
+        updatedMember.photos = updatedMember.photos.filter(
+          (x) => x.id !== photo.id
+        );
+        this.memberChange.emit(updatedMember);
+      },
+    });
+  }
+
+  setMainPhoto(photo: Photo) {
+    this.memberService.setMainPhoto(photo).subscribe({
+      next: (_) => {
+        const user = this.accountService.currentUser();
+        if (user) {
+          user.photoUrl = photo.url;
+          this.accountService.setCurrentUser(user);
+        }
+        const updatedMember = { ...this.member() };
+        updatedMember.photoUrl = photo.url;
+        updatedMember.photos.forEach((p) => {
+          if (p.isMain) p.isMain = false;
+          if (p.id === photo.id) p.isMain = true;
+        });
+        this.memberChange.emit(updatedMember);
+      },
+    });
+  }
+
   initializeUploader() {
     this.uploader = new FileUploader({
       url: this.baseUrl + 'users/add-photo',
@@ -65,36 +96,5 @@ export class PhotoEditorComponent implements OnInit {
         this.memberChange.emit(updatedMember);
       }
     };
-  }
-
-  setMainPhoto(photo: Photo) {
-    this.memberService.setMainPhoto(photo).subscribe({
-      next: (_) => {
-        const user = this.accountService.currentUser();
-        if (user) {
-          user.photoUrl = photo.url;
-          this.accountService.setCurrentUser(user);
-        }
-        const updatedMember = { ...this.member() };
-        updatedMember.photoUrl = photo.url;
-        updatedMember.photos.forEach((p) => {
-          if (p.isMain) p.isMain = false;
-          if (p.id === photo.id) p.isMain = true;
-        });
-        this.memberChange.emit(updatedMember);
-      },
-    });
-  }
-
-  deletePhoto(photo: Photo) {
-    this.memberService.deletePhoto(photo).subscribe({
-      next: (_) => {
-        const updatedMember = { ...this.member() };
-        updatedMember.photos = updatedMember.photos.filter(
-          (x) => x.id !== photo.id
-        );
-        this.memberChange.emit(updatedMember);
-      },
-    });
   }
 }

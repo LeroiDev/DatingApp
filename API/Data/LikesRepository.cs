@@ -64,16 +64,6 @@ public class LikesRepository(DataContext context, IMapper mapper) : ILikesReposi
 
         return await PagedList<MemberDto>.CreateAsync(query, likesParams.PageNumber, likesParams.PageSize);
     }
-
-    public Task<PagedList<MemberDto>> GetUserLikes(string predicate, int userId)
-    {
-        throw new NotImplementedException();
-    }
-
-    public async Task<bool> SaveChanges()
-    {
-        return await context.SaveChangesAsync() > 0;
-    }
 }
 
 

@@ -4,12 +4,10 @@ import {
   ViewChild,
   inject,
   input,
-  output,
 } from '@angular/core';
 import { MessageService } from '../../_services/message.service';
 import { TimeagoModule } from 'ngx-timeago';
 import { FormsModule, NgForm } from '@angular/forms';
-import { Message } from '../../_models/message';
 
 @Component({
   selector: 'app-member-messages',
@@ -25,17 +23,6 @@ export class MemberMessagesComponent implements AfterViewChecked {
   username = input.required<string>();
   messageContent = '';
   loading = false;
-  messages = input.required<Message[]>();
-  updateMessages = output<Message>();
-
-  // sendMessage(){
-  //   this.messageService.sendMessage(this.username(), this.messageContent).subscribe({
-  //     next: message => {
-  //       this.updateMessages.emit(message);
-  //       this.messageForm?.reset();
-  //     }
-  //   })
-  // }
 
   sendMessage() {
     this.loading = true;

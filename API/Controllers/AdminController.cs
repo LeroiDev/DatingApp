@@ -1,6 +1,4 @@
-﻿using API.Controllers;
-using API.Entities;
-using API.Interfaces;
+﻿using API.Entities;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;

@@ -22,15 +22,15 @@ export class AdminService {
     );
   }
 
-  // getPhotosForApproval() {
-  //   return this.http.get<Photo[]>(this.baseUrl + 'admin/photos-to-moderate');
-  // }
+  getPhotosForApproval() {
+    return this.http.get<Photo[]>(this.baseUrl + 'admin/photos-to-moderate');
+  }
 
-  // approvePhoto(photoId: number) {
-  //   return this.http.post(this.baseUrl + 'admin/approve-photo/' + photoId, {});
-  // }
+  approvePhoto(photoId: number) {
+    return this.http.post(this.baseUrl + 'admin/approve-photo/' + photoId, {});
+  }
 
-  // rejectPhoto(photoId: number) {
-  //   return this.http.post(this.baseUrl + 'admin/reject-photo/' + photoId, {});
-  // }
+  rejectPhoto(photoId: number) {
+    return this.http.post(this.baseUrl + 'admin/reject-photo/' + photoId, {});
+  }
 }
